@@ -1,8 +1,17 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { NativeModules, StyleSheet, View, Text, Button } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
+const ToastManager = NativeModules.ToastManager;
+const CallManager = NativeModules.CallManager;
+
 export default class CallUsScreen extends React.Component {
+    makeToast = () => {
+        ToastManager.show('Awesome', 5);
+    };
+    makeCall = () => {
+        CallManager.call("+54 9 3413949771");
+    }
     static navigationOptions = {
         title: 'Call Us!',
         drawerLabel: 'Call Us',        
@@ -16,6 +25,7 @@ export default class CallUsScreen extends React.Component {
                 <Text style={{fontSize: 18, color: 'black'}}>
                     +54 9 3413949771
                 </Text>
+                <Button onPress={this.makeCall} title="CALL!!!" />
             </View>
         );
     }

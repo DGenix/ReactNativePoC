@@ -1,5 +1,4 @@
 # React Native TestApp: DGenix-Sample
-==========
 
 ## Installing dependencies
 
@@ -39,14 +38,14 @@ Command Line Tools
 
 You will also need to install the Xcode Command Line Tools. Open Xcode, then choose "Preferences..." from the Xcode menu. Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools dropdown.
 
-[Image](https://facebook.github.io/react-native/docs/assets/GettingStartedXcodeCommandLineTools.png)
+![Image](https://facebook.github.io/react-native/docs/assets/GettingStartedXcodeCommandLineTools.png)
 
 ## Running your React Native application
 
 Run `react-native run-ios` inside your React Native project folder:
 
 ```
-cd TestAppDGenix
+cd DgenixTestApp
 react-native run-ios
 ```
 
@@ -88,6 +87,6 @@ If you have a physical Android device, you can use it for development in place o
 Run `react-native run-android` inside your React Native project folder
 
 ```
-cd TestAppDGenix
+cd DgenixTestApp
 react-native run-android
 ```
