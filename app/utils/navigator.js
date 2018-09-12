@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, SafeAreaView, ScrollView, Image } from 'react-native';
+import { View, SafeAreaView, ScrollView, Image, TouchableWithoutFeedback } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
     createStackNavigator,
@@ -88,13 +88,16 @@ const BottomTabs = createBottomTabNavigator(
 // Necessary for drawer hamburger
 const CustomDrawerComponent = (props) => (
     <SafeAreaView style={{ flex: 1 }} forceInset={{ top: 'always', horizontal: 'never' }}>
-        <View style={{ backgroundColor: 'white' }}>
-            <Image
-                source={ require('./../assets/img/dgenix-header.png') }
-                style={{ marginLeft: 1, width: 280, height: 100, backgroundColor: 'white', resizeMode: 'contain' }}
-            />
-            <Divider style={{ backgroundColor: 'black' }} />
-        </View>
+        <TouchableWithoutFeedback
+            onPress={() => props.navigation.navigate('Home')}>
+                <View style={{ backgroundColor: 'white' }}>
+                    <Image
+                        source={ require('./../assets/img/dgenix-header.png') }
+                        style={{ marginLeft: 1, width: 280, height: 100, backgroundColor: 'white', resizeMode: 'contain' }}
+                    />
+                    <Divider style={{ backgroundColor: 'black' }} />
+                </View>
+            </TouchableWithoutFeedback>
         <ScrollView>
             <DrawerItems { ...props } />
         </ScrollView>
