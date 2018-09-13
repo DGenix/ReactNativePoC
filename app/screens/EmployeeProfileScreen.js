@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Image, View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 export default class EmployeeProfileScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
@@ -14,9 +15,13 @@ export default class EmployeeProfileScreen extends React.Component {
         const employeeImg = navigation.getParam('employeeImg', 'Empty');
         return(
             <View style={styles.content}>
-                <Image
-                    source={{uri: employeeImg}}
-                    style={styles.image} />
+                <FastImage
+                    style={styles.image}
+                    source={{
+                        uri: employeeImg,
+                        priority: FastImage.priority.normal
+                    }}
+                />
                 <View style={styles.textRow}>
                     <Text style={styles.textTitle}>Name:</Text>
                     <Text style={styles.textDescription}>{employeeName}</Text>
