@@ -23,6 +23,7 @@ import WebTechTab from '../screens/tabs/WebTechTab';
 import BackendTechTab from '../screens/tabs/BackendTechTab';
 import CallUsScreen from '../screens/CallUsScreen';
 import EmailUsScreen from '../screens/EmailUsScreen';
+import FindUsScreen from '../screens/FindUsScreen';
 
 const TopTabs = createMaterialTopTabNavigator(
     {
@@ -107,7 +108,8 @@ const CustomDrawerComponent = (props) => (
 const DrawerSample = createDrawerNavigator(
     {
         CallUs: { screen: CallUsScreen },
-        EmailUs: { screen: EmailUsScreen }
+        EmailUs: { screen: EmailUsScreen },
+        FindUs: { screen: FindUsScreen }
     },
     {
         initialRouteName: 'CallUs',
