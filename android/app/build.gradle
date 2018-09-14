@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-maps')
     compile project(':react-native-fast-image')
     compile project(':rn-fetch-blob')
     compile project(':react-native-vector-icons')
