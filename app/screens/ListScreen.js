@@ -4,7 +4,21 @@ import { Divider, Icon } from 'react-native-elements';
 
 export default class ListScreen extends React.Component {
     static navigationOptions = {
-        title: 'D-Genix Employees'
+        title: 'D-Genix Employees',
+        headerRight: (
+            <View style={{paddingRight: 10}}>
+                <Icon
+                    onPress={() => EmployeesList.push({ title: 'Web', data:[ {key:'Test', name: 'Test', position: 'Tester', img: 'https://dgenix.com/assets/img/team/david-revoledo.png'}]})}
+                    name='add'
+                    type='ionicons'
+                    color='white'
+                    title='AddEmployee'
+                />
+            </View>
+        )
+    };
+    state = {
+        refreshing: false
     };
     render() {
         return (
@@ -40,6 +54,7 @@ export default class ListScreen extends React.Component {
                         <Text style={styles.sectionHeader}>{section.title}</Text>
                     }
                     keyExtractor={(item, index) => index}
+                    extraData={this.EmployeesList}
                 />                
             </View>
         );
